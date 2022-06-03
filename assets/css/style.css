@@ -17,12 +17,12 @@ body{
 .a{
   grid-area: a;
   height: 10vh;
-  background-color: rgb(255, 174, 0);
+  background-color: rgb(255, 30, 0);
 }
 .nav{
   grid-area: b;
   height: 90vh;
-  background-color: rgb(231, 238, 130);
+  background-color: rgb(238, 179, 130);
 }
 
 .navbar-text {
@@ -39,7 +39,7 @@ body{
 .d{
   grid-area: d;
   height: 10vh;
-  background-color: green;
+  background-color: rgb(128, 47, 0);
 }
 @media (max-width: 576px){
   body {
