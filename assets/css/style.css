@@ -4,81 +4,131 @@
 }
 html {
   height: 100vh;
-  width: 100vw;
+  width: 100wh;
 }
 body {
   display: grid;
+  grid-template-rows: 1fr 1fr 8fr 1fr;
   grid-template-areas:
-    "a a a a a"
-    "b c c c c"
-    "b d d d d";
+    "a"
+    "b"
+    "c"
+    "d";
 }
-.a {
-  grid-area: a;
-  height: 10vh;
-  background-color: rgb(255, 30, 0);
+.filter {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(134, 38, 51);
+  color: rgb(240, 188, 66);
 }
-
 .page-navigation {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.filter {
-  display: flex;
-  justify-content: center;
-}
 .nav {
+  grid-area: a;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  background-color: rgb(240, 188, 66);
+  color: rgb(134, 38, 51);
+}
+
+.menu {
+  display: none;
+}
+.container {
+  background-color: rgb(134, 38, 51);
+}
+.b {
   grid-area: b;
-  height: 90vh;
-  background-color: rgb(238, 179, 130);
+  background-color: rgb(134, 38, 51);
 }
-
-.navbar-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-}
-
-.card-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1rem;
-}
-
 .c {
   grid-area: c;
   height: 80vh;
-  background-color: rgb(77, 8, 8);
+  background-color: chocolate;
+}
+.card-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: rgb(240, 188, 66);
+}
+.card2 {
+  display: none;
+}
+
+.button {
+  padding: 10px;
+  margin-top: 5px;
+  background-color: rgb(240, 188, 66);
+  text-align: center;
+  width: 100%;
+  font-size: 100%;
 }
 .d {
   grid-area: d;
-  height: 10vh;
-  background-color: rgb(128, 47, 0);
+  background-color: rgb(134, 38, 51);
+  color: rgb(240, 188, 66);
 }
-@media (max-width: 576px) {
+
+@media (min-width: 576px) {
   body {
-    display: grid;
     grid-template-areas:
-      "b"
-      "c"
-      "d";
+      "a b b b"
+      "a c c c"
+      "a c c c"
+      "d c c c";
+    grid-template-columns: 2fr 10fr;
+    grid-template-rows: 10% 10% 70% 10%;
   }
-  .a {
-    display: none;
+  .nav {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-start;
+    text-align: center;
+    background-color: rgb(240, 188, 66);
+  }
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(240, 188, 66);
+  }
+  .container {
+    background-color: rgb(134, 38, 51);
   }
   .b {
-    height: 10vh;
+    background-color: rgb(rgb(240, 188, 66));
   }
   .c {
     height: 80vh;
   }
+
+  .card1 {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    gap: 1rem;
+  }
+
+  .card2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+    gap: 1rem;
+  }
+  i {
+    display: none;
+  }
   .d {
-    height: 10vh;
+    height: 100%;
   }
 }
